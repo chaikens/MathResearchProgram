@@ -1,0 +1,23 @@
+To compile: Read or Run build.sh script.
+
+To run program:  see instructions printed by queens --help 
+Each run prints the number of arrangements.  This number is preceeded
+by a printout of the arrangements themselves if the --show-boards
+option is given.
+
+To use perl scripts to do runs for successive numbers of columns
+and compute the difference table for the results:  Edit the self-explanatory
+variable settings near the top of the script and run it.  
+  diffs_startn.pl does it for queen pieces
+  diffs_startn_knight does it for knight pieces.
+
+Note for knights and kings: The placements with 1 piece per row are
+found when program defaults are used.  To count with more than one
+piece per row, you must specify the number of pieces in each row
+by using the --pieces-per-row n1,n2,...,nr option.
+
+To implement new kinds of pieces:  Just edit PieceZoo.cpp and rebuild.
+  Do just two things: (1) Add a class for the new piece that codes a 
+test for whether two pieces on given squares attack each other.  Follow
+the examples of QueenTester and KnightTest. (2) Add a line to specify what 
+name the user should give to select the new piece.
